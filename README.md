@@ -1,106 +1,44 @@
 
-# 📌 Week 2 – Node.js Authentication & Security Assignment
 
-This project implements **secure user authentication** using Node.js and Express.
-It includes **Signup**, **Login**, **Password Hashing**, **Token-based Authentication**, and **Security Headers**.
+# **Week 2 – Secure Authentication API (Signup + Login)**
+
+This project implements a secure authentication system using **Node.js**, **Express**, **bcrypt**, **JWT**, **Validator**, and **Helmet**.
+It includes secure **Signup**, **Login**, and **Token-based authentication**, along with input validation and password hashing.
+
+
+
+## 🚀 **Features Implemented**
+
+### ✅ 1. **Signup API**
+
+* Validates user input (email + password)
+* Uses **validator.js** to check valid email
+* Hashes password using **bcrypt**
+* Stores user temporarily (in-memory variable)
+
+### ✅ 2. **Login API**
+
+* Verifies email + hashed password
+* Generates **JWT token** on successful login
+* Returns token in response
+* Proper error handling for invalid credentials
+
+### ✅ 3. **Security Enhancements**
+
+* **Helmet** added to secure HTTP headers
+* **bcrypt** for password hashing
+* **validator.js** for sanitization and validation
+* **jsonwebtoken (JWT)** for secure authentication
 
 ---
 
-## 🚀 Features Implemented
+## 📦 **Installed Packages**
 
-### ✅ 1. Input Validation & Sanitization
-
-* Used **validator** library
-* Validates email format
-* Sanitizes inputs before processing
-
-```js
-if (!validator.isEmail(email)) {
-    return res.status(400).send("Invalid email");
-}
+```
+npm install express bcrypt jsonwebtoken validator helmet cors
 ```
 
 ---
-
-### ✅ 2. Password Hashing
-
-* Implemented using **bcrypt**
-* User passwords are hashed before saving
-
-```js
-const hashedPassword = await bcrypt.hash(password, 10);
-```
-
----
-
-### ✅ 3. Token-Based Authentication
-
-* Added **jsonwebtoken (JWT)**
-* On successful login, a JWT token is generated
-
-```js
-const token = jwt.sign({ email }, "secret123", { expiresIn: "1h" });
-```
-
----
-
-### ✅ 4. Secure HTTP Headers
-
-Used **helmet.js** to protect against common attacks:
-
-```js
-const helmet = require("helmet");
-app.use(helmet());
-```
-
----
-
-## 📡 API Endpoints
-
-### 🔹 **POST /api/signup**
-
-Registers a new user
-**Request Body:**
-
-```json
-{
-  "email": "maha@test.com",
-  "password": "123456"
-}
-```
-
-### 🔹 **POST /api/login**
-
-Authenticates user and returns a JWT token
-**Response Example:**
-
-```json
-{
-  "message": "Login successful",
-  "token": "your-jwt-token"
-}
-```
-
----
-
-## 🛠 Technologies Used
-
-* Node.js
-* Express.js
-* bcrypt
-* jsonwebtoken
-* validator
-* helmet
-* Thunder Client (for API testing)
-
----
-
-## 📸 API Testing Screenshots
-
-✔️ **Signup API Response**
-✔️ **Login API Response with JWT Token**
-
-
 
 ## 📁 Project Structure
 
@@ -116,23 +54,129 @@ project/
 
 ---
 
-## 📥 Installation
+## 🔗 **API Endpoints**
 
-```sh
+### **POST /api/signup**
+
+Registers a new user.
+
+#### Sample Request
+
+```json
+{
+  "email": "test@example.com",
+  "password": "123456"
+}
+```
+
+#### Sample Response
+
+```json
+{
+  "message": "User registered",
+  "email": "test@example.com",
+  "hashedPassword": "..."
+}
+```
+
+---
+
+### **POST /api/login**
+
+Logs in the user & returns JWT token.
+
+#### Sample Request
+
+```json
+{
+  "email": "test@example.com",
+  "password": "123456"
+}
+```
+
+#### Sample Response
+
+```json
+{
+  "message": "Login successful",
+  "token": "eyJhbGciOi..."
+}
+```
+
+---
+
+## 🛡️ **Security Measures Used**
+
+### ✔ Input Validation
+
+```js
+if (!validator.isEmail(email)) {
+    return res.status(400).send("Invalid email");
+}
+```
+
+### ✔ Password Hashing
+
+```js
+const hashedPassword = await bcrypt.hash(password, 10);
+```
+
+### ✔ JWT Token Generation
+
+```js
+const token = jwt.sign({ email }, "secret123", { expiresIn: "1h" });
+```
+
+### ✔ Security Headers
+
+```js
+const helmet = require("helmet");
+app.use(helmet());
+```
+
+---
+
+## 🧪 **API Testing Screenshots**
+
+* ✔ Signup Test
+* ✔ Login Test
+
+(Upload your two Thunder-Client screenshots here)
+
+---
+
+## ☁️ **How to Run the Project**
+
+### 1. Install dependencies
+
+```
 npm install
 ```
 
-Start server:
+### 2. Start server
 
-```sh
+```
 node app.js
 ```
 
+### 3. Open API tester (Thunder Client / Postman)
 
-## 🧑‍💻 Author
+Use:
 
-**Maha Fatima**
-Week-2 Security Assignment
+```
+http://localhost:3000/api/signup
+http://localhost:3000/api/login
+```
 
+---
+
+## 📤 **How to Push to GitHub**
+
+```
+git add .
+git commit -m "Week 2 assignment completed"
+git pull origin main       ← (fixes rejected error)
+git push -u origin main
+```
 
 
