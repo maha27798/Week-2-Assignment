@@ -70,6 +70,7 @@ Registers a new user.
 ```
 
 #### Sample Response
+<img width="1919" height="1153" alt="thunder-client signup request" src="https://github.com/user-attachments/assets/bc2e1dbd-5b60-4577-ba04-74f6e13255c1" />
 
 ```json
 {
