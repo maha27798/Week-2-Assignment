@@ -104,14 +104,6 @@ app.use(helmet());
 
 ---
 
-## 🧪 **API Testing Screenshots**
-
-* ✔ Signup Test
-* ✔ Login Test
-
-(Upload your two Thunder-Client screenshots here)
-
----
 
 ## ☁️ **How to Run the Project**
 
