@@ -60,39 +60,18 @@ project/
 
 Registers a new user.
 
-#### Sample Request
-
-```json
-{
-  "email": "test@example.com",
-  "password": "123456"
-}
-
-<img width="1919" height="1153" alt="thunder-client signup request" src="https://github.com/user-attachments/assets/bc2e1dbd-5b60-4577-ba04-74f6e13255c1" />
+<img width="1919" height="1153" alt="thunder-client signup request" src="https://github.com/user-attachments/assets/4222cfc4-3b05-4b73-805f-51667e890d95" />
 
 
 
-
----
 
 ### **POST /api/login**
-<img width="1919" height="1152" alt="thunder-client login request" src="https://github.com/user-attachments/assets/4d3a3ee7-92fd-4f53-8aed-ec770025fb35" />
 
 Logs in the user & returns JWT token.
 
+<img width="1919" height="1152" alt="thunder-client login request" src="https://github.com/user-attachments/assets/9ac7a995-3ca3-460b-a3e6-1434daeac75e" />
 
 
-
-#### Sample Response
-
-```json
-{
-  "message": "Login successful",
-  "token": "eyJhbGciOi..."
-}
-```
-
----
 
 ## 🛡️ **Security Measures Used**
 
@@ -156,7 +135,5 @@ Use:
 http://localhost:3000/api/signup
 http://localhost:3000/api/login
 ```
-
-
 
 
