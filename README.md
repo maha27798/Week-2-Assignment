@@ -67,33 +67,21 @@ Registers a new user.
   "email": "test@example.com",
   "password": "123456"
 }
-```
 
-#### Sample Response
 <img width="1919" height="1153" alt="thunder-client signup request" src="https://github.com/user-attachments/assets/bc2e1dbd-5b60-4577-ba04-74f6e13255c1" />
 
-```json
-{
-  "message": "User registered",
-  "email": "test@example.com",
-  "hashedPassword": "..."
-}
-```
+
+
 
 ---
 
 ### **POST /api/login**
+<img width="1919" height="1152" alt="thunder-client login request" src="https://github.com/user-attachments/assets/4d3a3ee7-92fd-4f53-8aed-ec770025fb35" />
 
 Logs in the user & returns JWT token.
 
-#### Sample Request
 
-```json
-{
-  "email": "test@example.com",
-  "password": "123456"
-}
-```
+
 
 #### Sample Response
 
