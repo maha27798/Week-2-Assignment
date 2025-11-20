@@ -168,15 +168,6 @@ http://localhost:3000/api/signup
 http://localhost:3000/api/login
 ```
 
----
 
-## 📤 **How to Push to GitHub**
-
-```
-git add .
-git commit -m "Week 2 assignment completed"
-git pull origin main       ← (fixes rejected error)
-git push -u origin main
-```
 
 
